@@ -14,16 +14,9 @@ public class LoginSteps {
 
     @Given("que estoy en la página de inicio de sesión")
     public void abrirPaginaInicioSesion() {
-        System.setProperty("webdriver.chrome.driver", "ruta/a/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("http://localhost:9090/login");
-    }
-
-    @When("ingreso el nombre de usuario {string}")
-    public void ingresoNombreUsuario(String username) {
-        WebElement usernameField = driver.findElement(By.id("username"));
-        usernameField.sendKeys(username);
-        driver.findElement(By.id("submit")).click();
+        driver.get("http://localhost:9093/CtaCorriente/login.jsp");
     }
 
     @When("ingreso el nombre de usuario {string} y password {string}")
@@ -51,7 +44,9 @@ public class LoginSteps {
 
     @Given("que estoy en la página de registro de citas")
     public void abrirPaginaRegistroCitas() {
-        driver.get("http://localhost:9090/citas");
+    	System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+    	driver = new ChromeDriver();
+        driver.get("http://localhost:9093/CtaCorriente/citas.jsp");
     }
 
     @When("selecciono el horario {string}")
