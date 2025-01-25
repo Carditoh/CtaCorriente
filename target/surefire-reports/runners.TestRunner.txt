@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: Junit.DatabaseConnectionTest
+Test set: runners.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.758 s - in Junit.DatabaseConnectionTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 21.91 s - in runners.TestRunner

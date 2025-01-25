@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 public class LoginSteps {
 
@@ -31,21 +31,21 @@ public class LoginSteps {
     @Then("el sistema permite el acceso exitosamente")
     public void verificarAccesoExitoso() {
         WebElement successMessage = driver.findElement(By.id("success"));
-        assertNotNull(successMessage, "El acceso no fue exitoso.");
+        assertNotNull("El acceso no fue exitoso.", successMessage);
         driver.quit();
     }
 
     @Then("el sistema muestra un mensaje de error")
     public void verificarMensajeError() {
         WebElement errorMessage = driver.findElement(By.id("error"));
-        assertNotNull(errorMessage, "No se mostró el mensaje de error.");
+        assertNotNull("No se mostró el mensaje de error.", errorMessage);
         driver.quit();
     }
 
     @Given("que estoy en la página de registro de citas")
     public void abrirPaginaRegistroCitas() {
-    	System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-    	driver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        driver = new ChromeDriver();
         driver.get("http://localhost:9093/CtaCorriente/citas.jsp");
     }
 
@@ -63,7 +63,7 @@ public class LoginSteps {
     @Then("el sistema registra la cita exitosamente")
     public void verificarCitaRegistrada() {
         WebElement successMessage = driver.findElement(By.id("success"));
-        assertNotNull(successMessage, "La cita no se registró correctamente.");
+        assertNotNull("La cita no se registró correctamente.", successMessage);
         driver.quit();
     }
 }

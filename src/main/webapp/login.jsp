@@ -1,33 +1,31 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesi贸n</title>
+    <title>Inicio de Sesi髇</title>
 </head>
 <body>
-    <h1>Inicio de Sesi贸n</h1>
+    <h1>Inicio de Sesi髇</h1>
     <form id="loginForm">
         <label for="username">Nombre de Usuario:</label><br>
         <input type="text" id="username" name="username" required><br><br>
         
-        <label for="password">Contrase帽a:</label><br>
+        <label for="password">Contrase馻:</label><br>
         <input type="password" id="password" name="password" required><br><br>
         
-        <button type="button" id="submit" onclick="login()">Iniciar Sesi贸n</button>
+        <button type="button" id="submit" onclick="login()">Iniciar Sesi髇</button>
     </form>
 
-    <p id="success" style="color: green; display: none;">隆Inicio de sesi贸n exitoso!</p>
-    <p id="error" style="color: red; display: none;">Error: Usuario o contrase帽a incorrectos.</p>
+    <p id="success" style="color: green; display: none;">nicio de sesi髇 exitoso!</p>
+    <p id="error" style="color: red; display: none;">Error: Usuario o contrase馻 incorrectos.</p>
 
     <script>
         function login() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            // Simulaci贸n de verificaci贸n con datos est谩ticos
+            // Simulaci髇 de verificaci髇 con datos est醫icos
             if (username === "usuario_valido" && password === "password_correcto") {
                 document.getElementById('success').style.display = 'block';
                 document.getElementById('error').style.display = 'none';
@@ -39,4 +37,3 @@
     </script>
 </body>
 </html>
-

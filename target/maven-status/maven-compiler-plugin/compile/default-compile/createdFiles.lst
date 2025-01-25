@@ -1,0 +1,3 @@
+controllers\UsuarioController.class
+models\UsuarioRepository.class
+models\Usuario.class

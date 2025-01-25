@@ -1,14 +1,14 @@
 package Junit;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 public class DatabaseConnectionTest {
 
@@ -19,13 +19,13 @@ public class DatabaseConnectionTest {
     private final String DB_USER = "root";
     private final String DB_PASSWORD = "";
 
-    @BeforeEach
+    @Before
     public void setUp() throws SQLException {
         // Establece la conexión antes de cada prueba
         connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
     }
 
-    @AfterEach
+    @After
     public void tearDown() throws SQLException {
         // Cierra la conexión después de cada prueba
         if (connection != null && !connection.isClosed()) {
@@ -36,27 +36,26 @@ public class DatabaseConnectionTest {
     @Test
     public void testConnectionNotNull() {
         // Verifica que la conexión no sea nula
-        assertNotNull(connection, "La conexión a la base de datos debería establecerse correctamente.");
+        assertNotNull("La conexión a la base de datos debería establecerse correctamente.", connection);
     }
 
     @Test
     public void testConnectionIsValid() throws SQLException {
         // Verifica si la conexión es válida
-        assertTrue(connection.isValid(2), "La conexión a la base de datos no es válida.");
+        assertTrue("La conexión a la base de datos no es válida.", connection.isValid(2));
     }
 
     @Test
     public void testQueryExecution() throws SQLException {
         // Ejecuta una consulta simple para verificar la conectividad
-        var query = "SELECT 1";
+        String query = "SELECT 1";
         var statement = connection.createStatement();
         var resultSet = statement.executeQuery(query);
 
-        assertTrue(resultSet.next(), "La consulta debería devolver al menos un resultado.");
-        assertEquals(1, resultSet.getInt(1), "El resultado de la consulta no es el esperado.");
+        assertTrue("La consulta debería devolver al menos un resultado.", resultSet.next());
+        assertEquals("El resultado de la consulta no es el esperado.", 1, resultSet.getInt(1));
 
         resultSet.close();
         statement.close();
     }
-    
 }
