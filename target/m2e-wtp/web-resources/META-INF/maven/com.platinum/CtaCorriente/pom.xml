@@ -92,7 +92,7 @@
         	</systemPropertyVariables>
 		    <includes>
 		    	<include>**/*Test.java</include>
-		        <include>**/TestRunner.java</include>
+		        <exclude>**/TestRunner.java</exclude>
 		    </includes>
 		</configuration>
         </plugin>
