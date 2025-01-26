@@ -17,6 +17,9 @@ public class LoginSteps {
     public void abrirPaginaInicioSesion() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.get("http://localhost:9093/CtaCorriente/login.jsp");
@@ -49,6 +52,9 @@ public class LoginSteps {
     public void abrirPaginaRegistroCitas() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.get("http://localhost:9093/CtaCorriente/citas.jsp");
