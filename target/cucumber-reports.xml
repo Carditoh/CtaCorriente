@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="20.895" tests="3" skipped="0" failures="0" errors="0">
-<testcase classname="Login and Registration" name="Ingreso de nombre de usuario con datos almacenados en BD" time="11.954">
+<testsuite name="Cucumber" time="19.506" tests="3" skipped="0" failures="0" errors="0">
+<testcase classname="Login and Registration" name="Ingreso de nombre de usuario con datos almacenados en BD" time="10.046">
 <system-out><![CDATA[
 Given que estoy en la página de inicio de sesión............................passed
 When ingreso el nombre de usuario "usuario_valido" y password "password_correcto".passed
 Then el sistema permite el acceso exitosamente..............................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login and Registration" name="Ingreso de nombre de usuario y password con datos erróneos" time="4.441">
+<testcase classname="Login and Registration" name="Ingreso de nombre de usuario y password con datos erróneos" time="4.748">
 <system-out><![CDATA[
 Given que estoy en la página de inicio de sesión............................passed
 When ingreso el nombre de usuario "usuario_invalido" y password "password_invalido".passed
 Then el sistema muestra un mensaje de error.................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login and Registration" name="Registro de hora médica" time="4.173">
+<testcase classname="Login and Registration" name="Registro de hora médica" time="4.388">
 <system-out><![CDATA[
 Given que estoy en la página de registro de citas...........................passed
 When selecciono el horario "10:00 AM".......................................passed

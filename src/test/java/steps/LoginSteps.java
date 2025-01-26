@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.Assert.*;
 
@@ -15,7 +16,9 @@ public class LoginSteps {
     @Given("que estoy en la página de inicio de sesión")
     public void abrirPaginaInicioSesion() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(options);
         driver.get("http://localhost:9093/CtaCorriente/login.jsp");
     }
 
@@ -45,7 +48,9 @@ public class LoginSteps {
     @Given("que estoy en la página de registro de citas")
     public void abrirPaginaRegistroCitas() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(options);
         driver.get("http://localhost:9093/CtaCorriente/citas.jsp");
     }
 
